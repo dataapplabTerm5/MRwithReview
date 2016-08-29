@@ -28,9 +28,9 @@ public class Demo {
 
 		private ReivewWritable info = new ReivewWritable();
 		public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-			try {
-				ObjectMapper mapper = new ObjectMapper();
-	            String[] tuple = value.toString().split("\\n");
+	 	try {
+			ObjectMapper mapper = new ObjectMapper();
+	        	String[] tuple = value.toString().split("\\n");
 	             for(int i=0;i<tuple.length; i++)
 	             {
 	            	 Review review = mapper.readValue(tuple[i], Review.class);
